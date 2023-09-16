@@ -5,6 +5,10 @@
 
 IP Status Monitor is a simple Flask web application that allows you to monitor the status of multiple IP addresses defined in a configuration file. It uses the `ping3` library to determine whether an IP address is alive or dead.
 
+### Screenshot
+
+![screenshot](./img/screenshot-1.png)
+
 ### Getting Started
 
 1. Clone this repository to your local machine.
