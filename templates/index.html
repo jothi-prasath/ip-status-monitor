@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 2rem;
+        }
+        table{
+            min-width: 500px;
+            width: auto;
+            text-align: center;
+        }
+        @media screen and (max-width: 980px) {
+            body{
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Address</th>
+            <th></th>
+            <th>Status</th>
+        </tr>
+        {% for ip, status in ip_status.items() %}
+        <tr>
+            <td>{{ ip }}</td>
+            <td></td>
+            <td>
+                {% if status == "alive" %}
+                <span>&#x1F7E2;</span> Alive
+                {% else %}
+                <span>&#x1F534;</span> Dead
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <script>
+        setTimeout(function () {
+            location.reload();
+        }, {{ interval }} * 1000);
+    </script>
+</body>
+</html>
